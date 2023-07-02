@@ -1,2 +1,3 @@
+| #   | Projects          | Description                                                                                                                  |
 | :-- | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| 01  | Simple Quiz App     | A Simple React-js Quiz App                                           
+| 01  | Quiz App      | A Simple Quiz App using Reactjs                                 

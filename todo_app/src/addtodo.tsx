@@ -9,26 +9,29 @@ function Addtodo({ label }: InputFieldProps) {
   const unique_id = uuid();
   const small_id = unique_id.slice(0, 8);
   const [inputValue, setInputValue] = useState("");
-
+  const [isEdit, isSetEdit] = useState(0);
   const [alltodos, setTodos] = useState<any>([]);
 
   const addTodonew = (e: any) => {
     e.preventDefault();
+    if (isEdit === 0) {
+      setTodos((prev: any) => {
+        return [
+          ...prev,
+          {
+            inputValue: inputValue,
+            id: small_id,
+          },
+        ];
+      });
+    } else {
+      const updatedTodos = alltodos.map((todo: any) =>
+        todo.id === isEdit ? { ...todo, inputValue: inputValue } : todo
+      );
+      isSetEdit(0);
+      setTodos(updatedTodos);
+    }
 
-    // const newId = uuidv4();
-    // const newTodoItem = { id: small_id, text: inputValue };
-    // console.log(newTodoItem, "///");
-    // setTodos((prevTodos: any) => [...prevTodos, newTodoItem]);
-    // setInputValue("");
-    setTodos((prev: any) => {
-      return [
-        ...prev,
-        {
-          inputValue: inputValue,
-          id: small_id,
-        },
-      ];
-    });
     setInputValue("");
   };
 
@@ -36,15 +39,21 @@ function Addtodo({ label }: InputFieldProps) {
     setInputValue(event.target.value);
   };
   const deleteTodo = (index: number) => {
-    // alltodos.filter((data: any, index: any) => index === index);
     setTodos((prevTodos: any) =>
       prevTodos.filter((todo: any) => todo.id !== index)
     );
-    // <div>sdfds</div>;
   };
-  console.log(alltodos, "??//");
-  const editTodo = () => {
-    <div>sdfds</div>;
+
+  const editTodo = (todo: any) => {
+    setInputValue(todo.inputValue);
+    isSetEdit(todo.id);
+    // setTodos((prev: any) => [
+    //   {
+    //     ...prev,
+    //     inputValue,
+    //     [todo.id]: todo,
+    //   },
+    // ]);
   };
 
   return (
@@ -99,7 +108,7 @@ function Addtodo({ label }: InputFieldProps) {
             >
               ❌
             </div>
-            <div style={{ cursor: "pointer" }} onClick={editTodo}>
+            <div style={{ cursor: "pointer" }} onClick={() => editTodo(todo)}>
               ✔
             </div>
           </div>

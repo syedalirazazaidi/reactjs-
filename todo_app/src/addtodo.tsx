@@ -38,7 +38,7 @@ function Addtodo({ label }: InputFieldProps) {
   const deleteTodo = (index: number) => {
     // alltodos.filter((data: any, index: any) => index === index);
     setTodos((prevTodos: any) =>
-      prevTodos.filter((todo: any) => index !== index)
+      prevTodos.filter((todo: any) => todo.id !== index)
     );
     // <div>sdfds</div>;
   };
@@ -90,11 +90,11 @@ function Addtodo({ label }: InputFieldProps) {
               gap: "60px",
             }}
           >
-            <div style={{ margin: "6px" }} key={index}>
-              {todo}
+            <div style={{ margin: "6px" }} key={todo.id}>
+              {todo.inputValue}
             </div>
             <div
-              onClick={() => deleteTodo(index)}
+              onClick={() => deleteTodo(todo.id)}
               style={{ cursor: "pointer" }}
             >
               ❌

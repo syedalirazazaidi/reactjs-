@@ -81,7 +81,7 @@ export default function Random() {
         </div>
       </div>
       <div style={{ marginTop: "30px" }}>
-        <button onClick={generateNumber}>Generate Number</button>
+        <button onClick={generateNumber}>Generate Random Number</button>
       </div>
     </div>
   );

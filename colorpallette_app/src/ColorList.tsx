@@ -21,6 +21,7 @@ export default function ColorList() {
   const handleColorClick = (color: string) => {
     // setSelectedColor(color);
     document.body.style.backgroundColor = color;
+    settrue(false);
   };
   const copyColor = (color: string) => {
     setColorCopied(color);

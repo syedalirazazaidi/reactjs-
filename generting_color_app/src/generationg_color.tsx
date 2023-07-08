@@ -79,7 +79,7 @@ export default function GenerationgColor() {
           },
         ];
       });
-    }, 200);
+    }, 1000);
     return () => clearInterval(interval);
   }, [boxes]);
 

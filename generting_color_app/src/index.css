@@ -16,7 +16,9 @@
 .color-grid {
   display: grid;
   grid-template-columns: repeat(13, 1fr); /* Adjust the number of columns as needed */
-  gap:20px
+  gap:20px;
+ 
+ 
 }
 a {
   font-weight: 500;
@@ -31,6 +33,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  background-color: teal;
   
 }
 

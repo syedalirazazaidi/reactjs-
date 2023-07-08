@@ -94,6 +94,8 @@ export default function GenerationgColor() {
             width: "80px",
             paddingTop: "40px",
             display: "inline-block",
+            borderRadius: " 5px",
+            border: "1px solid gray",
           }}
         >
           {index}

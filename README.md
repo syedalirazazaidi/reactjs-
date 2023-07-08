@@ -5,3 +5,4 @@
 | 03  | Number App        | A Random Number Generation App using React-js where a generate number after clicking button   |
 | 04  | Gallery App       | A Simple Gallery App using React-js                                                           |
 | 05  | Color Palette App | A Simple Color Palette App A user can change the background color and also can copy the code |
+| 06  | Generate Color App | A Simple Color Generate after a one second using set time interval|

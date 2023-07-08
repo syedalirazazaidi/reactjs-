@@ -15,8 +15,8 @@
 }
 .color-grid {
   display: grid;
-  grid-template-columns: repeat(11, 1fr); /* Adjust the number of columns as needed */
-  
+  grid-template-columns: repeat(13, 1fr); /* Adjust the number of columns as needed */
+  gap:20px
 }
 a {
   font-weight: 500;
